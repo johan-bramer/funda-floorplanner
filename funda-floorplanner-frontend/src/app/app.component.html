@@ -1,7 +1,40 @@
-<div [className]="'main'">
-  <img [className]="'logo'" ngSrc="assets/background.png" width="512" height="512" alt="Funda logo" />
-  <mat-slide-toggle> toogle</mat-slide-toggle>
-</div>
+<div class="main">
+  <mat-card class="ffp-card">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon aria-hidden="true">floor</mat-icon>
+        &nbsp;Funda → Floorplanner
+      </mat-card-title>
+      <mat-card-subtitle>
+        Plak een Funda-url en ontvang Floorplanner-bestanden
+      </mat-card-subtitle>
+    </mat-card-header>
 
 
-<router-outlet />
+    <mat-card-content>
+      <form>
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Funda URL</mat-label>
+          <input matInput placeholder="https://www.funda.nl/koop/..." formControlName="fundaUrl" autocomplete="url" />
+          <button mat-icon-button matSuffix type="button" aria-label="Wis">
+            <mat-icon>clear</mat-icon>
+          </button>
+        </mat-form-field>
+
+
+        <div class="actions">
+          <button mat-flat-button color="primary" type="submit">
+            <mat-icon>rocket_launch</mat-icon>
+            &nbsp;Converteren
+          </button>
+        </div>
+      </form>
+
+
+
+
+
+    </mat-card-content>
+  </mat-card>
+
+  <router-outlet />
